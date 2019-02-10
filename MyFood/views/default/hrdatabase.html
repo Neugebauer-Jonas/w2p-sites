@@ -1,0 +1,24 @@
+{{extend 'layout.html'}}
+
+<table class="table" style="border-style: solid;">
+{{for row in rows:}}
+    
+    <tr style="border-style: dashed;border-width: 2px;border-color: #0046ff; margin: 10px 10px 10px 10px;">
+    <td>E: {{=row.BROJ}} Ime: {{=row.NAZIV}} </td>
+    <td><a href="{{=URL('HRtoIW',args=row.BROJ)}}">HR-IW</a> {{redcheck=db2.IW(db2.IW.BROJ==row.BROJ)}}{{if not redcheck:}}TODO{{else:}}{{if not redcheck.OPIS:}}TODO{{else:}}✓{{pass}}{{pass}}<br>
+     
+        <a href="{{=URL('HRtoDE',args=row.BROJ)}}">HR-DE</a> {{redcheck=db2.DE(db2.DE.BROJ==row.BROJ)}}{{if not redcheck:}}TODO{{else:}}{{if not redcheck.OPIS:}}TODO{{else:}}✓{{pass}}{{pass}}<br>
+        <a href="{{=URL('HRtoEN',args=row.BROJ)}}">HR-EN</a> {{redcheck=db2.EN(db2.EN.BROJ==row.BROJ)}}{{if not redcheck:}}TODO{{else:}}{{if not redcheck.OPIS:}}TODO{{else:}}✓{{pass}}{{pass}}<br>
+        <a href="{{=URL('HRtoIT',args=row.BROJ)}}">HR-IT</a> {{redcheck=db2.IT(db2.IT.BROJ==row.BROJ)}}{{if not redcheck:}}TODO{{else:}}{{if not redcheck.OPIS:}}TODO{{else:}}✓{{pass}}{{pass}}<br>
+         <a href="{{=URL('HRtoFR',args=row.BROJ)}}">HR-FR</a> {{redcheck=db2.FR(db2.FR.BROJ==row.BROJ)}}{{if not redcheck:}}TODO{{else:}}{{if not redcheck.OPIS:}}TODO{{else:}}✓{{pass}}{{pass}}<br>
+        <a href="{{=URL('ENtoIW',args=row.BROJ)}}">EN-IW</a>{{redcheck=db2.IW(db2.IW.BROJ==row.BROJ)}}{{if not redcheck:}}TODO{{else:}}{{if not redcheck.OPIS:}}TODO{{else:}}✓{{pass}}{{pass}}<br>
+        
+        
+        <a href="{{=URL('hrvatski',args=row.BROJ)}}">Edit HR</a>
+        
+        </td>
+    
+</tr>
+{{pass}}
+    
+    </table>

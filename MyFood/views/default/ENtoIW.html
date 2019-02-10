@@ -1,0 +1,18 @@
+{{extend 'layout.html'}}
+ <div class="container-fluid main-container" style="margin:auto;border:3px solid green;padding: 10px;">
+     
+     <table >
+         <tr>
+             <td><a class="btn btn-primary" href="{{=URL('ENtoIW',args=(-1+request.args(0,cast=int)))}}">Previous</a></td>
+             <td><a  class="btn btn-primary" href="{{=URL('ENtoIW',args=(1+request.args(0,cast=int)))}}">Next</a>
+                 <br><br><br</td>
+         </tr>
+         <tr>
+             <td>English</td><td>Hebrew</td>
+         </tr>
+         <tr><td >{{=formEN}}</td>
+             <td>{{=formIW}}</td>
+         </tr>
+
+     </table>
+</div>

@@ -1,0 +1,38 @@
+{{extend 'layout.html'}}
+<a href="https://play.google.com/store/apps/details?id=hr.from.jonas_neugebauer.genijalac">Genijalac na Google Play-u-></a>
+<h1>
+    <a href="{{=URL('kat')}}">Unesi Novo pitanje-></a>
+</h1>
+
+
+<br>
+<br>
+<h2>
+    Moja pitanja:
+</h2>
+{{if auth.is_logged_in():}}
+{{=grid2}}
+
+
+
+<br><br>
+Udio pitanja :{{=cm}} /{{=ct}}
+
+<br><br>Ukupno unesena pitanja<br>
+{{i=0}}
+{{for ar in array:}}
+{{=names[i]}}
+{{=ar}}
+{{i=i+1}}
+  ,
+{{pass}}
+<br><br>Stats:<br>
+{{rows=db(db.auth_user.id>0).select()}}
+{{for row in rows:}}
+<br>
+{{=row.first_name[0]}} {{=row.last_name[0]}}:---> {{=db2(db2.Pitanja.Autor == row.first_name +' '+ row.last_name).count()}}/
+{{=db2(db2.Pitanja).count()}} {{=(100*db2(db2.Pitanja.Autor == row.first_name +' '+ row.last_name).count())/db2(db2.Pitanja).count()}}%
+
+{{pass}}
+{{pass}}
+<br><br>

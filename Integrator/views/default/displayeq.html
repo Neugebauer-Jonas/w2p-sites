@@ -1,0 +1,140 @@
+{{extend 'layout.html'}}
+{{block header}}
+<div class="jumbotron jumbotron-fluid" style="background-color: #3299CC; height:10px; color:white; padding:10px;word-wrap:break-word;">
+</div>
+{{end}}
+
+
+   {{block page_js}}
+        <script>
+            window.onload = function () {
+                var chart = new CanvasJS.Chart("graf", {
+                    animationEnabled: true,
+                    zoomEnabled:true,
+                    title:{
+                        	text: ""
+                        },
+                    axisY:{
+                        title:"value",
+                        includeZero: false
+                    },
+                    axisX:{
+                        title:"t"
+                    },
+                    data: [{
+                        type: "line",
+                        dataPoints: [
+                             
+                          
+                            {{x=0}}
+                          {{while x<50:}}
+                          { x: {{=float(t[x])}}, y: {{=float(result[x])}} },
+                             {{x=x+1}}
+                          {{pass}}
+                            
+                        ]
+                    }]
+                });
+                chart.render();
+            }
+        </script>
+
+        <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+     {{end page_js}}
+   
+      
+      
+      
+      
+      
+      
+
+    
+    <div class="container-fluid main-container">
+
+
+
+</table>
+<div class="container">
+    <h3>
+        Riješenje
+    </h3>
+    
+    
+   <table style="width: 100%;">
+<tbody>
+<tr style="height: 400px;">
+<td style="width: 50%; height: 250px;">
+    
+    <div class="naslov" style="margin-left:10px;margin-bottom:50px;">
+        
+        Prikazani problem :<br>
+        sa pocetnom vrijednoscu y0={{=y0}} <br>
+        u intervalu od {{=start}} do {{=end}}<br><br>
+
+    {{c=1}}
+        
+    
+        
+    {{for n in funkcija:}}
+    {{if n==':':}}
+    {{=n}}
+<br>
+    {{elif n=='r' and c==1:}}
+    {{c=2}}
+<br>{{=n}}
+   {{else:}}
+    {{=n}}
+    {{pass}}
+     {{pass}}
+    {{pass}}
+    {{pass}}
+    <br>
+
+    </div>
+
+    </td>
+<td style="width: 50%; height: 250px;">
+    
+    <div class="naslov" style="margin-left:10px;margin-bottom:50px;">
+        
+         <div id="graf" style="height: 250px; width: 100%;"></div>
+        
+    </div>
+    
+    
+    
+    </td>
+</tr>
+</tbody>
+    </table>
+
+     <div class="row">
+    <div class="col-sm">
+        <h3>
+            Komentiraj
+        </h3>
+        <br>
+       
+       <div class="kometari" style="background-color:White">
+        {{=commentform}}
+       <br><br>
+        Prethodni komentari:
+        <br>
+            {{for row in rows:}}
+     
+            <div class="komentar" style="color:black;margin-left:10px;margin-top:10px; background-color:Gainsboro ;">
+          <b>{{=row.Autor}} </b>  je napisao: 
+                <div class="komentar" style="color:black;margin-left:40px; background-color:Gainsboro ;">   {{=row.Sadrzaj}}
+                </div>
+           </div>
+           
+        
+            {{pass}}
+        </div>
+         </div>
+        
+    </div>
+    
+    <div id="graf" style="height: 370px; width: 50%;"></div>
+</div>

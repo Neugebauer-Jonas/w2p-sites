@@ -1,0 +1,11 @@
+{{extend 'layout.html'}}
+<br><br>Ako se unosi url link , onda ne upisivati PitanjeText<br><br>
+{{=form}}
+<br><br>
+<h1>
+    Dosada unesena pitanja:<br><br>
+</h1>
+{{for row in rows:}}
+<br>
+(ID{{=row.id}})->  {{=row.PitanjeText}}
+{{pass}}

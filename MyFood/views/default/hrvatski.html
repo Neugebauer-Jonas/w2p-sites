@@ -1,0 +1,9 @@
+{{extend 'layout.html'}}
+<table>
+    <tr>
+        <td><a class="btn btn-primary" href="{{=URL('hrvatski',args=(-1+request.args(0,cast=int)))}}">Previous</a></td>
+             <td><a  class="btn btn-primary" href="{{=URL('hrvatski',args=(1+request.args(0,cast=int)))}}">Next</a>
+        
+    </tr>
+</table>
+{{=form}}

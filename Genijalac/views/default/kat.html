@@ -1,0 +1,30 @@
+{{extend 'layout.html'}}
+<h1><br>
+    Popis kategorija :
+</h1>
+<br>
+<h4>
+    <a href="{{=URL('default/newData','Biologija')}}">Biologija-</a>{{=db2(db2.Pitanja.Kategorija =='Biologija' ).count()}}<br>
+    <a href="{{=URL('default/newData','Bitke')}}">Bitke ,Ratovi i slicno</a>{{=db2(db2.Pitanja.Kategorija =='Bitke' ).count()}}<br>
+    <a href="{{=URL('default/newData','Film')}}">Film-</a>{{=db2(db2.Pitanja.Kategorija =='Film' ).count()}}<br>
+    <a href="{{=URL('default/newData','Geografija')}}">Geografija-</a>{{=db2(db2.Pitanja.Kategorija =='Geografija' ).count()}}<br>
+    <a href="{{=URL('default/newData','Glazba')}}">Glazba-</a>{{=db2(db2.Pitanja.Kategorija =='Glazba' ).count()}}<br>
+    <a href="{{=URL('default/newData','Gradovi')}}">Gradovi-</a>{{=db2(db2.Pitanja.Kategorija =='Gradovi' ).count()}}<br>
+    <a href="{{=URL('default/newData','Hrana')}}">Hrana-</a>{{=db2(db2.Pitanja.Kategorija =='Hrana' ).count()}}<br>
+    <a href="{{=URL('default/newData','Kazaliste')}}">Kazaliste-</a>{{=db2(db2.Pitanja.Kategorija =='Kazaliste' ).count()}}<br>
+    <a href="{{=URL('default/newData','Knjizevnost')}}">Knjizevnost-</a>{{=db2(db2.Pitanja.Kategorija =='Knjizevnost' ).count()}}<br>
+    <a href="{{=URL('default/newData','Mitologija')}}">Mitologija-</a>{{=db2(db2.Pitanja.Kategorija =='Mitologija' ).count()}}<br>
+    <a href="{{=URL('default/newData','Muzika')}}">Muzika-</a>{{=db2(db2.Pitanja.Kategorija =='Muzika' ).count()}}<br>
+    <a href="{{=URL('default/newData','Opce')}}">Opce znanje-opca kultura</a>{{=db2(db2.Pitanja.Kategorija =='Opce' ).count()}}<br>
+    <a href="{{=URL('default/newData','Politika')}}">Politika-</a>{{=db2(db2.Pitanja.Kategorija =='Politika' ).count()}}<br>
+    <a href="{{=URL('default/newData','Poznateosobe')}}">Poznate osobe-</a>{{=db2(db2.Pitanja.Kategorija =='Poznateosobe' ).count()}}<br>
+    <a href="{{=URL('default/newData','Povijest')}}">Povijest-</a> {{=db2(db2.Pitanja.Kategorija =='Povijest' ).count()}}<br>
+    <a href="{{=URL('default/newData','Sport')}}">Sport-</a>{{=db2(db2.Pitanja.Kategorija =='Sport' ).count()}}<br>
+    <a href="{{=URL('default/newData','Tehnologija')}}">Tehnologija-</a>{{=db2(db2.Pitanja.Kategorija =='Tehnologija' ).count()}}<br>
+    <a href="{{=URL('default/newData','Umjetnost')}}">Umjetnost-</a>{{=db2(db2.Pitanja.Kategorija =='Umjetnost' ).count()}}<br>
+    <a href="{{=URL('default/newData','Vjera')}}">Vjera-</a>{{=db2(db2.Pitanja.Kategorija =='Vjera' ).count()}}<br>
+    <a href="{{=URL('default/newData','Znanost')}}">Znanost-</a>{{=db2(db2.Pitanja.Kategorija =='Znanost' ).count()}}<br>
+
+<br>
+     <a href="{{=URL('default/newData','Logo')}}">Logo-</a>{{=db2(db2.Pitanja.Kategorija =='Logo' ).count()}}<br>
+</h4>

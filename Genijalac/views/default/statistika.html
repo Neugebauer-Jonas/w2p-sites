@@ -1,0 +1,21 @@
+{{extend 'layout.html'}}
+
+  <td><a class="btn btn-primary" href="{{=URL('statistika',args=(-1+request.args(0,cast=int)))}}">Previous</a></td>
+  <td><a  class="btn btn-primary" href="{{=URL('statistika',args=(1+request.args(0,cast=int)))}}">Next</a>
+
+
+{{=form}}
+{{rows=db(db.auth_user.id>0).select()}}
+{{for row in rows:}}
+<br>
+{{=row.first_name}} {{=row.last_name}}:---> {{=db2(db2.Pitanja.Autor == row.first_name +' '+ row.last_name).count()}}/
+{{=db2(db2.Pitanja).count()}} {{=(100*db2(db2.Pitanja.Autor == row.first_name +' '+ row.last_name).count())/db2(db2.Pitanja).count()}}%
+
+{{pass}}
+<br><br><br>
+{{for row in sve:}}
+
+     <br>
+IDbr : {{=row.id}}//{{=row.Autor}} //KAT:{{=row.Kategorija}}----> {{=row.PitanjeText}}--{{=row.Odgovor1}}--->>{{=row.Tocno}}/{{=row.Krivo}}=> Tezina {{=row.Diff}}
+
+{{pass}}

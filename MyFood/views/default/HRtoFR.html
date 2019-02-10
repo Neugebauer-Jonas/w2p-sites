@@ -1,0 +1,26 @@
+{{extend 'layout.html'}}
+ <div class="container-fluid main-container">
+     
+     <table stlye="width: 100%;">
+         <tr>
+             <td><a class="btn btn-primary" href="{{=URL('HRtoFR',args=(-1+request.args(0,cast=int)))}}">Previous</a></td>
+             <td><a  class="btn btn-primary" href="{{=URL('HRtoFR',args=(1+request.args(0,cast=int)))}}">Next</a>
+                 <br><br><br</td>
+         </tr>
+         <tr>
+             <td><div stlye="width:250px">
+                 
+             
+                 Hrvatski<br><br>
+                {{=formHr}}
+                     </div>
+             </td>
+             <td stlye="width: 50%;margin: 70px;">Francuski<br><br><br><br>
+                {{=formFR}}
+             </td>
+         </tr>
+         
+     </table>
+     
+     
+</div>
